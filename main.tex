@@ -1,0 +1,37 @@
+%!LW recipe=latexmk (xelatex)
+\documentclass[14pt, a4paper, fleqn, titlepage]{extarticle}
+\usepackage{styles/mystyle}
+\usepackage{tocloft}
+\usepackage{styles/titlepage}
+
+\renewcommand{\thesection}{ГЛАВА~\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} 
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\addto\captionsrussian{\renewcommand{\contentsname}{Оглавление}}
+\setdefaultlanguage{russian}
+\XeTeXlinebreaklocale "ru"
+\XeTeXlinebreakskip = 0pt plus 1pt
+\sloppy
+
+\begin{document}
+    \everymath{\displaystyle}
+
+    
+    \includepdf[pages=1, fitpaper=true]{pictures/titlepage.pdf}
+    \pagebreak
+
+    \setcounter{page}{1}
+
+    \tableofcontents
+    \thispagestyle{fancy}
+    \pagebreak
+
+
+    \input{parts/2. Intro.tex}
+    \pagebreak
+
+    \input{parts/3. Task.tex}
+    \pagebreak
+
+\end{document}
