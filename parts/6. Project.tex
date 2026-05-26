@@ -16,7 +16,7 @@
     \item \textbf{Библиотеки компьютерного зрения}: Python обладает наиболее полной экосистемой библиотек для работы с изображениями и нейронными сетями (OpenCV, PyTorch, EasyOCR), что является критическим требованием для данной системы.
     \item \textbf{Скорость разработки}: динамическая типизация и высокий уровень абстракции позволяют быстро прототипировать и тестировать алгоритмы, что особенно важно для учебной разработки.
     \item \textbf{Кроссплатформенность}: код может выполняться на Windows, Linux и macOS без существенных изменений.
-    \item \textbf{Интеграция с Windows API}: библиотека \texttt{pywin32} предоставляет удобный доступ к функциям захвата окон, необходимым для работы с покер-клиентом.
+    \item \textbf{Интеграция с Windows API}: библиотека \texttt{pywin32} предоставляет удобный доступ к функциям захвата окон, необходимых для работы с покер-клиентом.
 \end{itemize}
 
 \textbf{Альтернативы:}
@@ -153,33 +153,7 @@
 
 \subsubsection*{Общая архитектура системы}
 
-Система построена по модульному принципу с чётким разделением ответственности. Общая структура представлена на рисунке~\ref{fig:component_diagram}.
-
-\begin{figure}[h]
-    \centering
-    \fbox{
-        \parbox{0.9\textwidth}{
-            \centering
-            \textbf{Диаграмма компонентов системы} \\
-            \vspace{2cm}
-            \vspace{1cm}
-            Компоненты: \\
-            \texttt{service.py} (точка входа) \\
-            $\downarrow$ \\
-            \texttt{PokerStateManager} (оркестратор) \\
-            $\downarrow$ \\
-            \texttt{BaseRoom / ReplayPokerRoom} (логика рума) \\
-            $\downarrow$ \\
-            \begin{tabular}{ccc}
-                \texttt{Vision Pipeline} & \texttt{Extractors} & \texttt{Advisor} \\
-                (геометрия) & (OCR, NN) & (рекомендации)
-            \end{tabular}
-            \vspace{2cm}
-        }
-    }
-    \caption{Диаграмма компонентов программной системы}
-    \label{fig:component_diagram}
-\end{figure}
+Система построена по модульному принципу с чётким разделением ответственности.
 
 \subsubsection*{Основные модули}
 
@@ -426,7 +400,32 @@
 
 \subsubsection*{Снимки экрана интерфейса}
 
-% TODO: Добавить скрины интерфейса с реального покер-клиента;
+На рисунке~\ref{fig:ui_hud} представлен пример главного окна приложения.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/app.jpg}
+    \caption{Главное окно приложения}
+    \label{fig:ui_hud}
+\end{figure}
+
+На рисунке~\ref{fig:ui_config} представлен пример конфигурационного интерфейса системы.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/config.jpg}
+    \caption{Конфигурационный интерфейс системы}
+    \label{fig:ui_config}
+\end{figure}
+
+На рисунке~\ref{fig:ui_advice} представлен оверлейный интерфейс с рекомендацией по действию.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/advice.jpg}
+    \caption{Оверлейный интерфейс с рекомендацией RAISE}
+    \label{fig:ui_advice}
+\end{figure}
 
 \textbf{Пояснение к снимкам:}
 \begin{itemize}

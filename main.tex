@@ -3,6 +3,7 @@
 \usepackage{styles/mystyle}
 \usepackage{tocloft}
 \usepackage{styles/titlepage}
+\usepackage{float}
 
 \renewcommand{\thesection}{ГЛАВА~\arabic{section}}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} 
@@ -16,7 +17,6 @@
 
 \begin{document}
 \everymath{\displaystyle}
-
 
 \includepdf[pages=1, fitpaper=true]{pictures/titlepage.pdf}
 \pagebreak
@@ -43,6 +43,9 @@
 \pagebreak
 
 \input{parts/6. Project.tex}
+\pagebreak
+
+\input{parts/7. Conclusion.tex}
 \pagebreak
 
 \input{parts/13. Library.tex}
